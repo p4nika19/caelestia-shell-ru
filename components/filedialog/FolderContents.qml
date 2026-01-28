@@ -62,7 +62,7 @@ Item {
             }
 
             StyledText {
-                text: qsTr("This folder is empty")
+                text: qsTr("Эта папка пуста")
                 color: Colours.palette.m3outline
                 font.pointSize: Appearance.font.size.large
                 font.weight: 500

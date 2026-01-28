@@ -15,7 +15,7 @@ CollapsibleSection {
 
     required property var rootPane
 
-    title: qsTr("Animations")
+    title: qsTr("Анимации")
     showBackground: true
 
     SectionContainer {
@@ -23,20 +23,22 @@ CollapsibleSection {
 
         SliderInput {
             Layout.fillWidth: true
-            
-            label: qsTr("Animation duration scale")
+
+            label: qsTr("Анимации во время масштабирования")
             value: rootPane.animDurationsScale
             from: 0.1
             to: 5.0
             decimals: 1
             suffix: "×"
-            validator: DoubleValidator { bottom: 0.1; top: 5.0 }
-            
-            onValueModified: (newValue) => {
+            validator: DoubleValidator {
+                bottom: 0.1
+                top: 5.0
+            }
+
+            onValueModified: newValue => {
                 rootPane.animDurationsScale = newValue;
                 rootPane.saveConfig();
             }
         }
     }
 }
-

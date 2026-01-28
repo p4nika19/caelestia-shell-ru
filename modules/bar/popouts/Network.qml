@@ -28,14 +28,14 @@ ColumnLayout {
         Layout.preferredHeight: visible ? implicitHeight : 0
         Layout.topMargin: visible ? Appearance.padding.normal : 0
         Layout.rightMargin: Appearance.padding.small
-        text: qsTr("Wireless")
+        text: qsTr("Беспроводное соединение")
         font.weight: 500
     }
 
     Toggle {
         visible: root.view === "wireless"
         Layout.preferredHeight: visible ? implicitHeight : 0
-        label: qsTr("Enabled")
+        label: qsTr("Включено")
         checked: Nmcli.wifiEnabled
         toggle.onToggled: Nmcli.enableWifi(checked)
     }
@@ -45,7 +45,7 @@ ColumnLayout {
         Layout.preferredHeight: visible ? implicitHeight : 0
         Layout.topMargin: visible ? Appearance.spacing.small : 0
         Layout.rightMargin: Appearance.padding.small
-        text: qsTr("%1 networks available").arg(Nmcli.networks.length)
+        text: qsTr("%1 сетей доступно").arg(Nmcli.networks.length)
         color: Colours.palette.m3onSurfaceVariant
         font.pointSize: Appearance.font.size.small
     }
@@ -199,7 +199,7 @@ ColumnLayout {
 
             StyledText {
                 Layout.topMargin: -Math.round(scanIcon.fontInfo.pointSize * 0.0575)
-                text: qsTr("Rescan networks")
+                text: qsTr("Просканировать сети")
                 color: Colours.palette.m3onPrimaryContainer
             }
 
@@ -232,7 +232,7 @@ ColumnLayout {
         Layout.preferredHeight: visible ? implicitHeight : 0
         Layout.topMargin: visible ? Appearance.spacing.small : 0
         Layout.rightMargin: Appearance.padding.small
-        text: qsTr("%1 devices available").arg(Nmcli.ethernetDevices.length)
+        text: qsTr("%1 устройств доступно").arg(Nmcli.ethernetDevices.length)
         color: Colours.palette.m3onSurfaceVariant
         font.pointSize: Appearance.font.size.small
     }
@@ -284,7 +284,7 @@ ColumnLayout {
                 Layout.leftMargin: Appearance.spacing.small / 2
                 Layout.rightMargin: Appearance.spacing.small / 2
                 Layout.fillWidth: true
-                text: ethernetItem.modelData.interface || qsTr("Unknown")
+                text: ethernetItem.modelData.interface || qsTr("Неизвестно")
                 elide: Text.ElideRight
                 font.weight: ethernetItem.modelData.connected ? 500 : 400
                 color: ethernetItem.modelData.connected ? Colours.palette.m3primary : Colours.palette.m3onSurface

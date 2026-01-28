@@ -15,7 +15,7 @@ CollapsibleSection {
 
     required property var rootPane
 
-    title: qsTr("Scales")
+    title: qsTr("Размеры")
     showBackground: true
 
     SectionContainer {
@@ -23,16 +23,19 @@ CollapsibleSection {
 
         SliderInput {
             Layout.fillWidth: true
-            
-            label: qsTr("Padding scale")
+
+            label: qsTr("Размер заполнения")
             value: rootPane.paddingScale
             from: 0.5
             to: 2.0
             decimals: 1
             suffix: "×"
-            validator: DoubleValidator { bottom: 0.5; top: 2.0 }
-            
-            onValueModified: (newValue) => {
+            validator: DoubleValidator {
+                bottom: 0.5
+                top: 2.0
+            }
+
+            onValueModified: newValue => {
                 rootPane.paddingScale = newValue;
                 rootPane.saveConfig();
             }
@@ -44,16 +47,19 @@ CollapsibleSection {
 
         SliderInput {
             Layout.fillWidth: true
-            
-            label: qsTr("Rounding scale")
+
+            label: qsTr("Размер скругления")
             value: rootPane.roundingScale
             from: 0.1
             to: 5.0
             decimals: 1
             suffix: "×"
-            validator: DoubleValidator { bottom: 0.1; top: 5.0 }
-            
-            onValueModified: (newValue) => {
+            validator: DoubleValidator {
+                bottom: 0.1
+                top: 5.0
+            }
+
+            onValueModified: newValue => {
                 rootPane.roundingScale = newValue;
                 rootPane.saveConfig();
             }
@@ -65,20 +71,22 @@ CollapsibleSection {
 
         SliderInput {
             Layout.fillWidth: true
-            
-            label: qsTr("Spacing scale")
+
+            label: qsTr("Размер интервалов")
             value: rootPane.spacingScale
             from: 0.1
             to: 2.0
             decimals: 1
             suffix: "×"
-            validator: DoubleValidator { bottom: 0.1; top: 2.0 }
-            
-            onValueModified: (newValue) => {
+            validator: DoubleValidator {
+                bottom: 0.1
+                top: 2.0
+            }
+
+            onValueModified: newValue => {
                 rootPane.spacingScale = newValue;
                 rootPane.saveConfig();
             }
         }
     }
 }
-

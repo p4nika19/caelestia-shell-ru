@@ -15,7 +15,7 @@ CollapsibleSection {
 
     required property var rootPane
 
-    title: qsTr("Border")
+    title: qsTr("Граница")
     showBackground: true
 
     SectionContainer {
@@ -23,16 +23,19 @@ CollapsibleSection {
 
         SliderInput {
             Layout.fillWidth: true
-            
-            label: qsTr("Border rounding")
+
+            label: qsTr("Скругление границ")
             value: rootPane.borderRounding
             from: 0.1
             to: 100
             decimals: 1
             suffix: "px"
-            validator: DoubleValidator { bottom: 0.1; top: 100 }
-            
-            onValueModified: (newValue) => {
+            validator: DoubleValidator {
+                bottom: 0.1
+                top: 100
+            }
+
+            onValueModified: newValue => {
                 rootPane.borderRounding = newValue;
                 rootPane.saveConfig();
             }
@@ -44,20 +47,22 @@ CollapsibleSection {
 
         SliderInput {
             Layout.fillWidth: true
-            
-            label: qsTr("Border thickness")
+
+            label: qsTr("Толщина границ")
             value: rootPane.borderThickness
             from: 0.1
             to: 100
             decimals: 1
             suffix: "px"
-            validator: DoubleValidator { bottom: 0.1; top: 100 }
-            
-            onValueModified: (newValue) => {
+            validator: DoubleValidator {
+                bottom: 0.1
+                top: 100
+            }
+
+            onValueModified: newValue => {
                 rootPane.borderThickness = newValue;
                 rootPane.saveConfig();
             }
         }
     }
 }
-

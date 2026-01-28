@@ -31,113 +31,113 @@ JsonObject {
 
     property list<var> actions: [
         {
-            name: "Calculator",
+            name: "Калькулятор",
             icon: "calculate",
-            description: "Do simple math equations (powered by Qalc)",
+            description: "Простые математические вычисления (через Qalc)",
             command: ["autocomplete", "calc"],
             enabled: true,
             dangerous: false
         },
         {
-            name: "Scheme",
+            name: "Цветовая схема",
             icon: "palette",
-            description: "Change the current colour scheme",
+            description: "Изменить текущую цветовую схему",
             command: ["autocomplete", "scheme"],
             enabled: true,
             dangerous: false
         },
         {
-            name: "Wallpaper",
+            name: "Обои",
             icon: "image",
-            description: "Change the current wallpaper",
+            description: "Изменить текущие обои",
             command: ["autocomplete", "wallpaper"],
             enabled: true,
             dangerous: false
         },
         {
-            name: "Variant",
+            name: "Вариация",
             icon: "colors",
-            description: "Change the current scheme variant",
+            description: "Изменить вариацию текущей цветовой схемы",
             command: ["autocomplete", "variant"],
             enabled: true,
             dangerous: false
         },
         {
-            name: "Transparency",
+            name: "Прозрачность",
             icon: "opacity",
-            description: "Change shell transparency",
+            description: "Изменить настройки прозрачности шелла",
             command: ["autocomplete", "transparency"],
             enabled: false,
             dangerous: false
         },
         {
-            name: "Random",
+            name: "Случайные",
             icon: "casino",
-            description: "Switch to a random wallpaper",
+            description: "Установить случайные обои",
             command: ["caelestia", "wallpaper", "-r"],
             enabled: true,
             dangerous: false
         },
         {
-            name: "Light",
+            name: "Светлая тема",
             icon: "light_mode",
-            description: "Change the scheme to light mode",
+            description: "Включить режим светлой темы для цветовой схемы",
             command: ["setMode", "light"],
             enabled: true,
             dangerous: false
         },
         {
-            name: "Dark",
+            name: "Тёмная тема",
             icon: "dark_mode",
-            description: "Change the scheme to dark mode",
+            description: "Включить режим тёмной темы для цветовой схемы",
             command: ["setMode", "dark"],
             enabled: true,
             dangerous: false
         },
         {
-            name: "Shutdown",
+            name: "Выключение",
             icon: "power_settings_new",
-            description: "Shutdown the system",
+            description: "Выключить систему",
             command: ["systemctl", "poweroff"],
             enabled: true,
             dangerous: true
         },
         {
-            name: "Reboot",
+            name: "Перезагрузка",
             icon: "cached",
-            description: "Reboot the system",
+            description: "Перезагрузить систему",
             command: ["systemctl", "reboot"],
             enabled: true,
             dangerous: true
         },
         {
-            name: "Logout",
+            name: "Выход",
             icon: "exit_to_app",
-            description: "Log out of the current session",
+            description: "Выйти из текущей сессии",
             command: ["loginctl", "terminate-user", ""],
             enabled: true,
             dangerous: true
         },
         {
-            name: "Lock",
+            name: "Блокировка",
             icon: "lock",
-            description: "Lock the current session",
+            description: "Заблокировать текущую сессию",
             command: ["loginctl", "lock-session"],
             enabled: true,
             dangerous: false
         },
         {
-            name: "Sleep",
+            name: "Спящий режим",
             icon: "bedtime",
-            description: "Suspend then hibernate",
+            description: "Перевести систему в спящий режим (гибернация)",
             command: ["systemctl", "suspend-then-hibernate"],
             enabled: true,
             dangerous: false
         },
         {
-            name: "Settings",
+            name: "Настройки",
             icon: "settings",
-            description: "Configure the shell",
+            description: "Настроить шелл",
             command: ["caelestia", "shell", "controlCenter", "open"],
             enabled: true,
             dangerous: false

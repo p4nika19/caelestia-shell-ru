@@ -15,12 +15,12 @@ CollapsibleSection {
 
     required property var rootPane
 
-    title: qsTr("Fonts")
+    title: qsTr("Шрифты")
     showBackground: true
 
     CollapsibleSection {
         id: materialFontSection
-        title: qsTr("Material font family")
+        title: qsTr("Семейство шрифтов Material")
         expanded: true
         showBackground: true
         nested: true
@@ -100,7 +100,7 @@ CollapsibleSection {
 
     CollapsibleSection {
         id: monoFontSection
-        title: qsTr("Monospace font family")
+        title: qsTr("Семейство моноширных шрифтов")
         expanded: false
         showBackground: true
         nested: true
@@ -179,7 +179,7 @@ CollapsibleSection {
 
     CollapsibleSection {
         id: sansFontSection
-        title: qsTr("Sans-serif font family")
+        title: qsTr("Семейство шрифтов без засечек")
         expanded: false
         showBackground: true
         nested: true
@@ -261,20 +261,22 @@ CollapsibleSection {
 
         SliderInput {
             Layout.fillWidth: true
-            
-            label: qsTr("Font size scale")
+
+            label: qsTr("Масштаб размера шрифта")
             value: rootPane.fontSizeScale
             from: 0.7
             to: 1.5
             decimals: 2
             suffix: "×"
-            validator: DoubleValidator { bottom: 0.7; top: 1.5 }
-            
-            onValueModified: (newValue) => {
+            validator: DoubleValidator {
+                bottom: 0.7
+                top: 1.5
+            }
+
+            onValueModified: newValue => {
                 rootPane.fontSizeScale = newValue;
                 rootPane.saveConfig();
             }
         }
     }
 }
-

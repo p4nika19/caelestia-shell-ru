@@ -62,7 +62,7 @@ Singleton {
                 // Save to file with pretty printing
                 fileView.setText(JSON.stringify(config, null, 2));
             } catch (e) {
-                Toaster.toast(qsTr("Failed to serialize config"), e.message, "settings_alert", Toast.Error);
+                Toaster.toast(qsTr("Не удалось записать конфигурацию"), e.message, "settings_alert", Toast.Error);
             }
         }
     }
@@ -101,9 +101,15 @@ Singleton {
 
     function serializeAppearance(): var {
         return {
-            rounding: { scale: appearance.rounding.scale },
-            spacing: { scale: appearance.spacing.scale },
-            padding: { scale: appearance.padding.scale },
+            rounding: {
+                scale: appearance.rounding.scale
+            },
+            spacing: {
+                scale: appearance.spacing.scale
+            },
+            padding: {
+                scale: appearance.padding.scale
+            },
             font: {
                 family: {
                     sans: appearance.font.family.sans,
@@ -111,10 +117,14 @@ Singleton {
                     material: appearance.font.family.material,
                     clock: appearance.font.family.clock
                 },
-                size: { scale: appearance.font.size.scale }
+                size: {
+                    scale: appearance.font.size.scale
+                }
             },
             anim: {
-                durations: { scale: appearance.anim.durations.scale }
+                durations: {
+                    scale: appearance.anim.durations.scale
+                }
             },
             transparency: {
                 enabled: appearance.transparency.enabled,
@@ -416,6 +426,7 @@ Singleton {
             gpuType: services.gpuType,
             visualiserBars: services.visualiserBars,
             audioIncrement: services.audioIncrement,
+            brightnessIncrement: services.brightnessIncrement,
             maxVolume: services.maxVolume,
             smartScheme: services.smartScheme,
             defaultPlayer: services.defaultPlayer,
@@ -452,19 +463,19 @@ Singleton {
                 const elapsed = timer.elapsedMs();
                 // Only show toast for external changes (not our own saves) and when elapsed time is meaningful
                 if (adapter.utilities.toasts.configLoaded && !recentlySaved && elapsed > 0) {
-                    Toaster.toast(qsTr("Config loaded"), qsTr("Config loaded in %1ms").arg(elapsed), "rule_settings");
+                    Toaster.toast(qsTr("Конфигурация загружена"), qsTr("Конфигурация загружена за %1мс").arg(elapsed), "rule_settings");
                 } else if (adapter.utilities.toasts.configLoaded && recentlySaved && elapsed > 0) {
-                    Toaster.toast(qsTr("Config saved"), qsTr("Config reloaded in %1ms").arg(elapsed), "rule_settings");
+                    Toaster.toast(qsTr("Конфигурация сохранена"), qsTr("Конфигурация перезагружена за %1мс").arg(elapsed), "rule_settings");
                 }
             } catch (e) {
-                Toaster.toast(qsTr("Failed to load config"), e.message, "settings_alert", Toast.Error);
+                Toaster.toast(qsTr("Не удалось загрузить конфигурацию"), e.message, "settings_alert", Toast.Error);
             }
         }
         onLoadFailed: err => {
             if (err !== FileViewError.FileNotFound)
-                Toaster.toast(qsTr("Failed to read config file"), FileViewError.toString(err), "settings_alert", Toast.Warning);
+                Toaster.toast(qsTr("Ошибка чтения файла конфигурации"), FileViewError.toString(err), "settings_alert", Toast.Warning);
         }
-        onSaveFailed: err => Toaster.toast(qsTr("Failed to save config"), FileViewError.toString(err), "settings_alert", Toast.Error)
+        onSaveFailed: err => Toaster.toast(qsTr("Ошибка сохранения конфигурации"), FileViewError.toString(err), "settings_alert", Toast.Error)
 
         JsonAdapter {
             id: adapter

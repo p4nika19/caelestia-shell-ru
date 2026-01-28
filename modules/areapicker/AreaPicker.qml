@@ -80,7 +80,7 @@ Scope {
 
     CustomShortcut {
         name: "screenshot"
-        description: "Open screenshot tool"
+        description: "Использовать инструмент для скриншотов"
         onPressed: {
             root.freeze = false;
             root.closing = false;
@@ -91,7 +91,7 @@ Scope {
 
     CustomShortcut {
         name: "screenshotFreeze"
-        description: "Open screenshot tool (freeze mode)"
+        description: "Использовать инструмент для скриншотов (режим заморозки)"
         onPressed: {
             root.freeze = true;
             root.closing = false;
@@ -102,7 +102,7 @@ Scope {
 
     CustomShortcut {
         name: "screenshotClip"
-        description: "Open screenshot tool (clipboard)"
+        description: "Использовать инструмент для скриншотов (с копией в буфер обмена)"
         onPressed: {
             root.freeze = false;
             root.closing = false;
@@ -113,7 +113,7 @@ Scope {
 
     CustomShortcut {
         name: "screenshotFreezeClip"
-        description: "Open screenshot tool (freeze mode, clipboard)"
+        description: "Использовать инструмент для скриншотов (режим заморозки с копированем в буфер обмена)"
         onPressed: {
             root.freeze = true;
             root.closing = false;

@@ -13,7 +13,7 @@ Column {
     width: Config.bar.sizes.batteryWidth
 
     StyledText {
-        text: UPower.displayDevice.isLaptopBattery ? qsTr("Remaining: %1%").arg(Math.round(UPower.displayDevice.percentage * 100)) : qsTr("No battery detected")
+        text: UPower.displayDevice.isLaptopBattery ? qsTr("Осталось: %1%").arg(Math.round(UPower.displayDevice.percentage * 100)) : qsTr("Батарея не обнаружена")
     }
 
     StyledText {
@@ -69,7 +69,7 @@ Column {
 
                     StyledText {
                         anchors.verticalCenter: parent.verticalCenter
-                        text: qsTr("Performance Degraded")
+                        text: qsTr("Производительность снизилась")
                         color: Colours.palette.m3onError
                         font.family: Appearance.font.family.mono
                         font.weight: 500
@@ -87,7 +87,7 @@ Column {
                 StyledText {
                     anchors.horizontalCenter: parent.horizontalCenter
 
-                    text: qsTr("Reason: %1").arg(PerformanceDegradationReason.toString(PowerProfiles.degradationReason))
+                    text: qsTr("Причина: %1").arg(PerformanceDegradationReason.toString(PowerProfiles.degradationReason))
                     color: Colours.palette.m3onError
                 }
             }

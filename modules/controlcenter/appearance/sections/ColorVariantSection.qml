@@ -12,8 +12,8 @@ import QtQuick
 import QtQuick.Layouts
 
 CollapsibleSection {
-    title: qsTr("Color variant")
-    description: qsTr("Material theme variant")
+    title: qsTr("Вариация цветовой схемы")
+    description: qsTr("Вариация темы")
     showBackground: true
 
     ColumnLayout {
@@ -89,4 +89,3 @@ CollapsibleSection {
         }
     }
 }
-

@@ -53,7 +53,7 @@ Item {
                     spacing: Appearance.spacing.small
 
                     StyledText {
-                        text: qsTr("Wallpaper missing?")
+                        text: qsTr("Обои не отображаются?")
                         color: Colours.palette.m3onSurfaceVariant
                         font.pointSize: Appearance.font.size.extraLarge * 2
                         font.bold: true
@@ -69,8 +69,8 @@ Item {
                         FileDialog {
                             id: dialog
 
-                            title: qsTr("Select a wallpaper")
-                            filterLabel: qsTr("Image files")
+                            title: qsTr("Выбрать обои")
+                            filterLabel: qsTr("Файлы изображения")
                             filters: Images.validImageExtensions
                             onAccepted: path => Wallpapers.setWallpaper(path)
                         }
@@ -89,7 +89,7 @@ Item {
 
                             anchors.centerIn: parent
 
-                            text: qsTr("Set it now!")
+                            text: qsTr("Установи их сейчас!")
                             color: Colours.palette.m3onPrimary
                             font.pointSize: Appearance.font.size.large
                         }

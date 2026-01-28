@@ -13,48 +13,47 @@ ColumnLayout {
     spacing: Appearance.spacing.small / 2
 
     StyledText {
-        text: qsTr("IP Address")
+        text: qsTr("IP Адрес")
     }
 
     StyledText {
-        text: root.deviceDetails?.ipAddress || qsTr("Not available")
+        text: root.deviceDetails?.ipAddress || qsTr("Недоступно")
         color: Colours.palette.m3outline
         font.pointSize: Appearance.font.size.small
     }
 
     StyledText {
         Layout.topMargin: Appearance.spacing.normal
-        text: qsTr("Subnet Mask")
+        text: qsTr("Маска подсети")
     }
 
     StyledText {
-        text: root.deviceDetails?.subnet || qsTr("Not available")
+        text: root.deviceDetails?.subnet || qsTr("Недоступно")
         color: Colours.palette.m3outline
         font.pointSize: Appearance.font.size.small
     }
 
     StyledText {
         Layout.topMargin: Appearance.spacing.normal
-        text: qsTr("Gateway")
+        text: qsTr("Шлюз")
     }
 
     StyledText {
-        text: root.deviceDetails?.gateway || qsTr("Not available")
+        text: root.deviceDetails?.gateway || qsTr("Недоступно")
         color: Colours.palette.m3outline
         font.pointSize: Appearance.font.size.small
     }
 
     StyledText {
         Layout.topMargin: Appearance.spacing.normal
-        text: qsTr("DNS Servers")
+        text: qsTr("DNS Серверы")
     }
 
     StyledText {
-        text: (root.deviceDetails && root.deviceDetails.dns && root.deviceDetails.dns.length > 0) ? root.deviceDetails.dns.join(", ") : qsTr("Not available")
+        text: (root.deviceDetails && root.deviceDetails.dns && root.deviceDetails.dns.length > 0) ? root.deviceDetails.dns.join(", ") : qsTr("Недоступно")
         color: Colours.palette.m3outline
         font.pointSize: Appearance.font.size.small
         wrapMode: Text.Wrap
         Layout.maximumWidth: parent.width
     }
 }
-

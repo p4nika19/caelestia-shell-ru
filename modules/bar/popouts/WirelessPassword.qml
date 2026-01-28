@@ -133,7 +133,7 @@ ColumnLayout {
 
             StyledText {
                 Layout.alignment: Qt.AlignHCenter
-                text: qsTr("Enter password")
+                text: qsTr("Введите пароль")
                 font.pointSize: Appearance.font.size.large
                 font.weight: 500
             }
@@ -145,10 +145,10 @@ ColumnLayout {
                     if (root.network) {
                         const ssid = root.network.ssid;
                         if (ssid && ssid.length > 0) {
-                            return qsTr("Network: %1").arg(ssid);
+                            return qsTr("Сеть: %1").arg(ssid);
                         }
                     }
-                    return qsTr("Network: Unknown");
+                    return qsTr("Сеть: Неизвестно");
                 }
                 color: Colours.palette.m3outline
                 font.pointSize: Appearance.font.size.small
@@ -190,10 +190,10 @@ ColumnLayout {
                 visible: connectButton.connecting || connectButton.hasError
                 text: {
                     if (connectButton.hasError) {
-                        return qsTr("Connection failed. Please check your password and try again.");
+                        return qsTr("Ошибка подключения. Пожалуйста проверьте свой пароль и попробуйте снова.");
                     }
                     if (connectButton.connecting) {
-                        return qsTr("Connecting...");
+                        return qsTr("Подключение...");
                     }
                     return "";
                 }
@@ -314,7 +314,7 @@ ColumnLayout {
                     id: placeholder
 
                     anchors.centerIn: parent
-                    text: qsTr("Password")
+                    text: qsTr("Пароль")
                     color: Colours.palette.m3outline
                     font.pointSize: Appearance.font.size.normal
                     font.family: Appearance.font.family.mono
@@ -416,7 +416,7 @@ ColumnLayout {
                     Layout.minimumHeight: Appearance.font.size.normal + Appearance.padding.normal * 2
                     inactiveColour: Colours.palette.m3secondaryContainer
                     inactiveOnColour: Colours.palette.m3onSecondaryContainer
-                    text: qsTr("Cancel")
+                    text: qsTr("Отмена")
 
                     onClicked: root.closeDialog()
                 }
@@ -431,7 +431,7 @@ ColumnLayout {
                     Layout.minimumHeight: Appearance.font.size.normal + Appearance.padding.normal * 2
                     inactiveColour: Colours.palette.m3primary
                     inactiveOnColour: Colours.palette.m3onPrimary
-                    text: qsTr("Connect")
+                    text: qsTr("Покдлючиться")
                     enabled: passwordContainer.passwordBuffer.length > 0 && !connecting
 
                     onClicked: {
@@ -450,7 +450,7 @@ ColumnLayout {
                         // Set connecting state
                         connecting = true;
                         enabled = false;
-                        text = qsTr("Connecting...");
+                        text = qsTr("Подключение...");
 
                         // Connect to network
                         NetworkConnection.connectWithPassword(root.network, password, result => {
@@ -462,7 +462,7 @@ ColumnLayout {
                                 connecting = false;
                                 hasError = true;
                                 enabled = true;
-                                text = qsTr("Connect");
+                                text = qsTr("Подключиться");
                                 passwordContainer.passwordBuffer = "";
                                 // Delete the failed connection
                                 if (root.network && root.network.ssid) {
@@ -474,7 +474,7 @@ ColumnLayout {
                                 connecting = false;
                                 hasError = true;
                                 enabled = true;
-                                text = qsTr("Connect");
+                                text = qsTr("Подключиться");
                                 passwordContainer.passwordBuffer = "";
                                 // Delete the failed connection
                                 if (root.network && root.network.ssid) {
@@ -514,7 +514,7 @@ ColumnLayout {
                 connectButton.connecting = false;
                 connectButton.hasError = true;
                 connectButton.enabled = true;
-                connectButton.text = qsTr("Connect");
+                connectButton.text = qsTr("Подключиться");
                 passwordContainer.passwordBuffer = "";
                 // Delete the failed connection
                 if (root.network && root.network.ssid) {
@@ -553,7 +553,7 @@ ColumnLayout {
                 if (stillConnected) {
                     connectionMonitor.stop();
                     connectButton.connecting = false;
-                    connectButton.text = qsTr("Connect");
+                    connectButton.text = qsTr("Подключиться");
                     // Return to network popout on successful connection
                     if (root.wrapper.currentName === "wirelesspassword") {
                         root.wrapper.currentName = "network";
@@ -577,7 +577,7 @@ ColumnLayout {
                 connectButton.connecting = false;
                 connectButton.hasError = true;
                 connectButton.enabled = true;
-                connectButton.text = qsTr("Connect");
+                connectButton.text = qsTr("Подключиться");
                 passwordContainer.passwordBuffer = "";
                 // Delete the failed connection
                 Nmcli.forgetNetwork(ssid);
@@ -603,4 +603,3 @@ ColumnLayout {
         }
     }
 }
-

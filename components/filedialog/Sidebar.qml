@@ -29,7 +29,7 @@ StyledRect {
             Layout.alignment: Qt.AlignHCenter
             Layout.topMargin: Appearance.padding.small / 2
             Layout.bottomMargin: Appearance.spacing.normal
-            text: qsTr("Files")
+            text: qsTr("Файлы")
             color: Colours.palette.m3onSurface
             font.pointSize: Appearance.font.size.larger
             font.bold: true

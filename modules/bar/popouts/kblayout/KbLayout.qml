@@ -19,15 +19,19 @@ ColumnLayout {
     spacing: Appearance.spacing.small
     width: Config.bar.sizes.kbLayoutWidth
 
-    KbLayoutModel { id: kb }
+    KbLayoutModel {
+        id: kb
+    }
 
-    function refresh() { kb.refresh() }
+    function refresh() {
+        kb.refresh();
+    }
     Component.onCompleted: kb.start()
 
     StyledText {
         Layout.topMargin: Appearance.padding.normal
         Layout.rightMargin: Appearance.padding.small
-        text: qsTr("Keyboard Layouts")
+        text: qsTr("Раскладки клавиатуры")
         font.weight: 500
     }
 
@@ -46,12 +50,39 @@ ColumnLayout {
         spacing: Appearance.spacing.small
 
         add: Transition {
-            NumberAnimation { properties: "opacity"; from: 0; to: 1; duration: 140 }
-            NumberAnimation { properties: "y"; duration: 180; easing.type: Easing.OutCubic }
+            NumberAnimation {
+                properties: "opacity"
+                from: 0
+                to: 1
+                duration: 140
+            }
+            NumberAnimation {
+                properties: "y"
+                duration: 180
+                easing.type: Easing.OutCubic
+            }
         }
-        remove: Transition { NumberAnimation { properties: "opacity"; to: 0; duration: 100 } }
-        move: Transition { NumberAnimation { properties: "y"; duration: 180; easing.type: Easing.OutCubic } }
-        displaced: Transition { NumberAnimation { properties: "y"; duration: 180; easing.type: Easing.OutCubic } }
+        remove: Transition {
+            NumberAnimation {
+                properties: "opacity"
+                to: 0
+                duration: 100
+            }
+        }
+        move: Transition {
+            NumberAnimation {
+                properties: "y"
+                duration: 180
+                easing.type: Easing.OutCubic
+            }
+        }
+        displaced: Transition {
+            NumberAnimation {
+                properties: "y"
+                duration: 180
+                easing.type: Easing.OutCubic
+            }
+        }
 
         delegate: Item {
             required property int layoutIndex
@@ -91,7 +122,7 @@ ColumnLayout {
             }
 
             ToolTip.visible: isDisabled && layer.containsMouse
-            ToolTip.text: "XKB limitation: maximum 4 layouts allowed"
+            ToolTip.text: "Ограничение XKB: максимум 4 раскадки"
         }
     }
 
@@ -145,13 +176,35 @@ ColumnLayout {
             running: false
 
             ParallelAnimation {
-                NumberAnimation { target: activeRow; property: "opacity"; to: 0.0; duration: 70 }
-                NumberAnimation { target: activeRow; property: "scale"; to: 0.92; duration: 70 }
+                NumberAnimation {
+                    target: activeRow
+                    property: "opacity"
+                    to: 0.0
+                    duration: 70
+                }
+                NumberAnimation {
+                    target: activeRow
+                    property: "scale"
+                    to: 0.92
+                    duration: 70
+                }
             }
 
             ParallelAnimation {
-                NumberAnimation { target: activeRow; property: "opacity"; to: 1.0; duration: 160; easing.type: Easing.OutCubic }
-                NumberAnimation { target: activeRow; property: "scale"; to: 1.0; duration: 220; easing.type: Easing.OutBack }
+                NumberAnimation {
+                    target: activeRow
+                    property: "opacity"
+                    to: 1.0
+                    duration: 160
+                    easing.type: Easing.OutCubic
+                }
+                NumberAnimation {
+                    target: activeRow
+                    property: "scale"
+                    to: 1.0
+                    duration: 220
+                    easing.type: Easing.OutBack
+                }
             }
         }
     }

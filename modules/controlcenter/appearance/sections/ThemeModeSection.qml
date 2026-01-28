@@ -9,16 +9,15 @@ import qs.config
 import QtQuick
 
 CollapsibleSection {
-    title: qsTr("Theme mode")
-    description: qsTr("Light or dark theme")
+    title: qsTr("Режим темы")
+    description: qsTr("Светлая или тёмная тема")
     showBackground: true
 
     SwitchRow {
-        label: qsTr("Dark mode")
+        label: qsTr("Тёмная тема")
         checked: !Colours.currentLight
         onToggled: checked => {
             Colours.setMode(checked ? "dark" : "light");
         }
     }
 }
-

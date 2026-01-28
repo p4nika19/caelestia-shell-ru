@@ -37,20 +37,20 @@ JsonObject {
         property list<var> warnLevels: [
             {
                 level: 20,
-                title: qsTr("Low battery"),
-                message: qsTr("You might want to plug in a charger"),
+                title: qsTr("Низкий заряд батареи"),
+                message: qsTr("Возможно вам стоит подключить зарядное устройство"),
                 icon: "battery_android_frame_2"
             },
             {
                 level: 10,
-                title: qsTr("Did you see the previous message?"),
-                message: qsTr("You should probably plug in a charger <b>now</b>"),
+                title: qsTr("Вы видели предыдущее сообщение?"),
+                message: qsTr("Вероятно вам стоит подключить зарядное устройство <b>сейчас</b>"),
                 icon: "battery_android_frame_1"
             },
             {
                 level: 5,
-                title: qsTr("Critical battery level"),
-                message: qsTr("PLUG THE CHARGER RIGHT NOW!!"),
+                title: qsTr("Критический уровень заряда батареи"),
+                message: qsTr("ПОДКЛЮЧИТЕ ЗАРЯДНОЕ УСТРОЙСТВО ПРЯМО СЕЙЧАС!!"),
                 icon: "battery_android_alert",
                 critical: true
             },

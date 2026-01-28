@@ -22,7 +22,7 @@ StyledRect {
         spacing: Appearance.spacing.small
 
         StyledText {
-            text: qsTr("Filter:")
+            text: qsTr("Фильтр:")
         }
 
         StyledRect {
@@ -62,7 +62,7 @@ StyledRect {
                 anchors.centerIn: parent
                 anchors.margins: Appearance.padding.normal
 
-                text: qsTr("Select")
+                text: qsTr("Выбрать")
                 color: root.dialog.selectionValid ? Colours.palette.m3onSurface : Colours.palette.m3outline
             }
         }
@@ -86,7 +86,7 @@ StyledRect {
                 anchors.centerIn: parent
                 anchors.margins: Appearance.padding.normal
 
-                text: qsTr("Cancel")
+                text: qsTr("Отменить")
             }
         }
     }

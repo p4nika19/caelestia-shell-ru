@@ -26,7 +26,7 @@ ColumnLayout {
     }
 
     Toggle {
-        label: qsTr("Enabled")
+        label: qsTr("Включен")
         checked: Bluetooth.defaultAdapter?.enabled ?? false
         toggle.onToggled: {
             const adapter = Bluetooth.defaultAdapter;
@@ -36,7 +36,7 @@ ColumnLayout {
     }
 
     Toggle {
-        label: qsTr("Discovering")
+        label: qsTr("Обнаружение")
         checked: Bluetooth.defaultAdapter?.discovering ?? false
         toggle.onToggled: {
             const adapter = Bluetooth.defaultAdapter;
@@ -50,10 +50,10 @@ ColumnLayout {
         Layout.rightMargin: Appearance.padding.small
         text: {
             const devices = Bluetooth.devices.values;
-            let available = qsTr("%1 device%2 available").arg(devices.length).arg(devices.length === 1 ? "" : "s");
+            let available = qsTr("%1 устройство%2 доступно").arg(devices.length).arg(devices.length === 1 ? "" : "s");
             const connected = devices.filter(d => d.connected).length;
             if (connected > 0)
-                available += qsTr(" (%1 connected)").arg(connected);
+                available += qsTr(" (%1 подключено)").arg(connected);
             return available;
         }
         color: Colours.palette.m3onSurfaceVariant
@@ -170,7 +170,7 @@ ColumnLayout {
         inactiveColour: Colours.palette.m3primaryContainer
         inactiveOnColour: Colours.palette.m3onPrimaryContainer
         verticalPadding: Appearance.padding.small
-        text: qsTr("Open settings")
+        text: qsTr("Открыть настройки")
         icon: "settings"
 
         onClicked: root.wrapper.detach("bluetooth")

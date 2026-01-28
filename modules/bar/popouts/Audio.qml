@@ -35,7 +35,7 @@ Item {
         spacing: Appearance.spacing.normal
 
         StyledText {
-            text: qsTr("Output device")
+            text: qsTr("Устройство вывода")
             font.weight: 500
         }
 
@@ -56,7 +56,7 @@ Item {
 
         StyledText {
             Layout.topMargin: Appearance.spacing.smaller
-            text: qsTr("Input device")
+            text: qsTr("Устройство ввода")
             font.weight: 500
         }
 
@@ -76,7 +76,7 @@ Item {
         StyledText {
             Layout.topMargin: Appearance.spacing.smaller
             Layout.bottomMargin: -Appearance.spacing.small / 2
-            text: qsTr("Volume (%1)").arg(Audio.muted ? qsTr("Muted") : `${Math.round(Audio.volume * 100)}%`)
+            text: qsTr("Громкость (%1)").arg(Audio.muted ? qsTr("Заглушен") : `${Math.round(Audio.volume * 100)}%`)
             font.weight: 500
         }
 
@@ -111,7 +111,7 @@ Item {
             inactiveColour: Colours.palette.m3primaryContainer
             inactiveOnColour: Colours.palette.m3onPrimaryContainer
             verticalPadding: Appearance.padding.small
-            text: qsTr("Open settings")
+            text: qsTr("Открыть настройки")
             icon: "settings"
 
             onClicked: root.wrapper.detach("audio")
