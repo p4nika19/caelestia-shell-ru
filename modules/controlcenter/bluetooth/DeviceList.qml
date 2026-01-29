@@ -20,8 +20,8 @@ DeviceList {
     readonly property bool smallDiscoverable: width <= 540
     readonly property bool smallPairable: width <= 480
 
-    title: qsTr("Devices (%1)").arg(Bluetooth.devices.values.length)
-    description: qsTr("All available bluetooth devices")
+    title: qsTr("Устройства (%1)").arg(Bluetooth.devices.values.length)
+    description: qsTr("Все доступные Bluetooth устройства")
     activeItem: session.bt.active
 
     model: ScriptModel {
@@ -51,7 +51,7 @@ DeviceList {
                 iconSize: Appearance.font.size.normal
                 horizontalPadding: Appearance.padding.normal
                 verticalPadding: Appearance.padding.smaller
-                tooltip: qsTr("Toggle Bluetooth")
+                tooltip: qsTr("Включить Bluetooth")
 
                 onClicked: {
                     const adapter = Bluetooth.defaultAdapter;
@@ -63,11 +63,11 @@ DeviceList {
             ToggleButton {
                 toggled: Bluetooth.defaultAdapter?.discoverable ?? false
                 icon: root.smallDiscoverable ? "group_search" : ""
-                label: root.smallDiscoverable ? "" : qsTr("Discoverable")
+                label: root.smallDiscoverable ? "" : qsTr("Обнаруживаемый")
                 iconSize: Appearance.font.size.normal
                 horizontalPadding: Appearance.padding.normal
                 verticalPadding: Appearance.padding.smaller
-                tooltip: qsTr("Make discoverable")
+                tooltip: qsTr("Сделать обнаруживаемым")
 
                 onClicked: {
                     const adapter = Bluetooth.defaultAdapter;
@@ -79,11 +79,11 @@ DeviceList {
             ToggleButton {
                 toggled: Bluetooth.defaultAdapter?.pairable ?? false
                 icon: "missing_controller"
-                label: root.smallPairable ? "" : qsTr("Pairable")
+                label: root.smallPairable ? "" : qsTr("Доступный для подключения")
                 iconSize: Appearance.font.size.normal
                 horizontalPadding: Appearance.padding.normal
                 verticalPadding: Appearance.padding.smaller
-                tooltip: qsTr("Make pairable")
+                tooltip: qsTr("Сделать доступным для подключения")
 
                 onClicked: {
                     const adapter = Bluetooth.defaultAdapter;
@@ -99,7 +99,7 @@ DeviceList {
                 iconSize: Appearance.font.size.normal
                 horizontalPadding: Appearance.padding.normal
                 verticalPadding: Appearance.padding.smaller
-                tooltip: qsTr("Scan for devices")
+                tooltip: qsTr("Сканировать устройства")
 
                 onClicked: {
                     const adapter = Bluetooth.defaultAdapter;
@@ -115,7 +115,7 @@ DeviceList {
                 iconSize: Appearance.font.size.normal
                 horizontalPadding: Appearance.padding.normal
                 verticalPadding: Appearance.padding.smaller
-                tooltip: qsTr("Bluetooth settings")
+                tooltip: qsTr("Настройки Bluetooth")
 
                 onClicked: {
                     if (root.session.bt.active)
@@ -194,13 +194,13 @@ DeviceList {
 
                     StyledText {
                         Layout.fillWidth: true
-                        text: device.modelData ? device.modelData.name : qsTr("Unknown")
+                        text: device.modelData ? device.modelData.name : qsTr("Неизвестно")
                         elide: Text.ElideRight
                     }
 
                     StyledText {
                         Layout.fillWidth: true
-                        text: (device.modelData ? device.modelData.address : "") + (device.connected ? qsTr(" (Connected)") : (device.modelData && device.modelData.bonded) ? qsTr(" (Paired)") : "")
+                        text: (device.modelData ? device.modelData.address : "") + (device.connected ? qsTr(" (Подключено)") : (device.modelData && device.modelData.bonded) ? qsTr(" (Связано)") : "")
                         color: Colours.palette.m3outline
                         font.pointSize: Appearance.font.size.small
                         elide: Text.ElideRight

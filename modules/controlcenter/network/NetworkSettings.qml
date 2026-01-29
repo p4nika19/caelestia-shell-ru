@@ -21,39 +21,39 @@ ColumnLayout {
 
     SettingsHeader {
         icon: "router"
-        title: qsTr("Network Settings")
+        title: qsTr("Настройки сети")
     }
 
     SectionHeader {
         Layout.topMargin: Appearance.spacing.large
         title: qsTr("Ethernet")
-        description: qsTr("Ethernet device information")
+        description: qsTr("Информация об Ethernet устройстве")
     }
 
     SectionContainer {
         contentSpacing: Appearance.spacing.small / 2
 
         PropertyRow {
-            label: qsTr("Total devices")
+            label: qsTr("Всего устройств")
             value: qsTr("%1").arg(Nmcli.ethernetDevices.length)
         }
 
         PropertyRow {
             showTopMargin: true
-            label: qsTr("Connected devices")
+            label: qsTr("Подключенные устройства")
             value: qsTr("%1").arg(Nmcli.ethernetDevices.filter(d => d.connected).length)
         }
     }
 
     SectionHeader {
         Layout.topMargin: Appearance.spacing.large
-        title: qsTr("Wireless")
-        description: qsTr("WiFi network settings")
+        title: qsTr("Беспроводные подключения")
+        description: qsTr("Настройки WiFi сети")
     }
 
     SectionContainer {
         ToggleRow {
-            label: qsTr("WiFi enabled")
+            label: qsTr("WiFi включен")
             checked: Nmcli.wifiEnabled
             toggle.onToggled: {
                 Nmcli.enableWifi(checked);
@@ -64,7 +64,7 @@ ColumnLayout {
     SectionHeader {
         Layout.topMargin: Appearance.spacing.large
         title: qsTr("VPN")
-        description: qsTr("VPN provider settings")
+        description: qsTr("Настройки VPN провадера")
         visible: Config.utilities.vpn.enabled || Config.utilities.vpn.provider.length > 0
     }
 
@@ -72,7 +72,7 @@ ColumnLayout {
         visible: Config.utilities.vpn.enabled || Config.utilities.vpn.provider.length > 0
 
         ToggleRow {
-            label: qsTr("VPN enabled")
+            label: qsTr("VPN включен")
             checked: Config.utilities.vpn.enabled
             toggle.onToggled: {
                 Config.utilities.vpn.enabled = checked;
@@ -82,7 +82,7 @@ ColumnLayout {
 
         PropertyRow {
             showTopMargin: true
-            label: qsTr("Providers")
+            label: qsTr("Провайдеры")
             value: qsTr("%1").arg(Config.utilities.vpn.provider.length)
         }
 
@@ -90,7 +90,7 @@ ColumnLayout {
             Layout.fillWidth: true
             Layout.topMargin: Appearance.spacing.normal
             Layout.minimumHeight: Appearance.font.size.normal + Appearance.padding.normal * 2
-            text: qsTr("⚙ Manage VPN Providers")
+            text: qsTr("⚙ Управление VPN провайдерами")
             inactiveColour: Colours.palette.m3secondaryContainer
             inactiveOnColour: Colours.palette.m3onSecondaryContainer
 
@@ -102,37 +102,37 @@ ColumnLayout {
 
     SectionHeader {
         Layout.topMargin: Appearance.spacing.large
-        title: qsTr("Current connection")
-        description: qsTr("Active network connection information")
+        title: qsTr("Текущее подключение")
+        description: qsTr("Информация об активном сетевом подключении")
     }
 
     SectionContainer {
         contentSpacing: Appearance.spacing.small / 2
 
         PropertyRow {
-            label: qsTr("Network")
-            value: Nmcli.active ? Nmcli.active.ssid : (Nmcli.activeEthernet ? Nmcli.activeEthernet.interface : qsTr("Not connected"))
+            label: qsTr("Сеть")
+            value: Nmcli.active ? Nmcli.active.ssid : (Nmcli.activeEthernet ? Nmcli.activeEthernet.interface : qsTr("Не подключена"))
         }
 
         PropertyRow {
             showTopMargin: true
             visible: Nmcli.active !== null
-            label: qsTr("Signal strength")
+            label: qsTr("Качество сигнала")
             value: Nmcli.active ? qsTr("%1%").arg(Nmcli.active.strength) : qsTr("N/A")
         }
 
         PropertyRow {
             showTopMargin: true
             visible: Nmcli.active !== null
-            label: qsTr("Security")
-            value: Nmcli.active ? (Nmcli.active.isSecure ? qsTr("Secured") : qsTr("Open")) : qsTr("N/A")
+            label: qsTr("Безопасность")
+            value: Nmcli.active ? (Nmcli.active.isSecure ? qsTr("Защищено") : qsTr("Открыть")) : qsTr("N/A")
         }
 
         PropertyRow {
             showTopMargin: true
             visible: Nmcli.active !== null
-            label: qsTr("Frequency")
-            value: Nmcli.active ? qsTr("%1 MHz").arg(Nmcli.active.frequency) : qsTr("N/A")
+            label: qsTr("Частота")
+            value: Nmcli.active ? qsTr("%1 МГц").arg(Nmcli.active.frequency) : qsTr("N/A")
         }
     }
 

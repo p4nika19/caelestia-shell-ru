@@ -20,18 +20,18 @@ ColumnLayout {
 
     SettingsHeader {
         icon: "bluetooth"
-        title: qsTr("Bluetooth Settings")
+        title: qsTr("Настройки Bluetooth")
     }
 
     StyledText {
         Layout.topMargin: Appearance.spacing.large
-        text: qsTr("Adapter status")
+        text: qsTr("Статус адаптера")
         font.pointSize: Appearance.font.size.larger
         font.weight: 500
     }
 
     StyledText {
-        text: qsTr("General adapter settings")
+        text: qsTr("Основные настройки адаптера")
         color: Colours.palette.m3outline
     }
 
@@ -53,7 +53,7 @@ ColumnLayout {
             spacing: Appearance.spacing.larger
 
             Toggle {
-                label: qsTr("Powered")
+                label: qsTr("Включен")
                 checked: Bluetooth.defaultAdapter?.enabled ?? false
                 toggle.onToggled: {
                     const adapter = Bluetooth.defaultAdapter;
@@ -63,7 +63,7 @@ ColumnLayout {
             }
 
             Toggle {
-                label: qsTr("Discoverable")
+                label: qsTr("Обнаруживаемый")
                 checked: Bluetooth.defaultAdapter?.discoverable ?? false
                 toggle.onToggled: {
                     const adapter = Bluetooth.defaultAdapter;
@@ -73,7 +73,7 @@ ColumnLayout {
             }
 
             Toggle {
-                label: qsTr("Pairable")
+                label: qsTr("Доступный для подключения")
                 checked: Bluetooth.defaultAdapter?.pairable ?? false
                 toggle.onToggled: {
                     const adapter = Bluetooth.defaultAdapter;
@@ -86,13 +86,13 @@ ColumnLayout {
 
     StyledText {
         Layout.topMargin: Appearance.spacing.large
-        text: qsTr("Adapter properties")
+        text: qsTr("Характеристики адаптера")
         font.pointSize: Appearance.font.size.larger
         font.weight: 500
     }
 
     StyledText {
-        text: qsTr("Per-adapter settings")
+        text: qsTr("Настройки для каждого адаптера")
         color: Colours.palette.m3outline
     }
 
@@ -119,7 +119,7 @@ ColumnLayout {
 
                 StyledText {
                     Layout.fillWidth: true
-                    text: qsTr("Current adapter")
+                    text: qsTr("Текущий адаптер")
                 }
 
                 Item {
@@ -149,7 +149,7 @@ ColumnLayout {
 
                         StyledText {
                             Layout.leftMargin: Appearance.padding.small
-                            text: Bluetooth.defaultAdapter?.name ?? qsTr("None")
+                            text: Bluetooth.defaultAdapter?.name ?? qsTr("Нет")
                         }
 
                         MaterialIcon {
@@ -271,7 +271,7 @@ ColumnLayout {
 
                 StyledText {
                     Layout.fillWidth: true
-                    text: qsTr("Discoverable timeout")
+                    text: qsTr("Больше недоступен для обнаружения")
                 }
 
                 CustomSpinBox {
@@ -328,7 +328,7 @@ ColumnLayout {
 
                         anchors.left: parent.left
 
-                        text: qsTr("Rename adapter (currently does not work)")
+                        text: qsTr("Переименовать адаптер (в данный момент не работает)")
                         color: Colours.palette.m3outline
                         font.pointSize: Appearance.font.size.small
                     }
@@ -449,13 +449,13 @@ ColumnLayout {
 
     StyledText {
         Layout.topMargin: Appearance.spacing.large
-        text: qsTr("Adapter information")
+        text: qsTr("Информация об адаптере")
         font.pointSize: Appearance.font.size.larger
         font.weight: 500
     }
 
     StyledText {
-        text: qsTr("Information about the default adapter")
+        text: qsTr("Информация об адаптере по умолчанию")
         color: Colours.palette.m3outline
     }
 
@@ -477,18 +477,18 @@ ColumnLayout {
             spacing: Appearance.spacing.small / 2
 
             StyledText {
-                text: qsTr("Adapter state")
+                text: qsTr("Состояние адаптера")
             }
 
             StyledText {
-                text: Bluetooth.defaultAdapter ? BluetoothAdapterState.toString(Bluetooth.defaultAdapter.state) : qsTr("Unknown")
+                text: Bluetooth.defaultAdapter ? BluetoothAdapterState.toString(Bluetooth.defaultAdapter.state) : qsTr("Неизвестно")
                 color: Colours.palette.m3outline
                 font.pointSize: Appearance.font.size.small
             }
 
             StyledText {
                 Layout.topMargin: Appearance.spacing.normal
-                text: qsTr("Dbus path")
+                text: qsTr("Dbus путь")
             }
 
             StyledText {
@@ -499,7 +499,7 @@ ColumnLayout {
 
             StyledText {
                 Layout.topMargin: Appearance.spacing.normal
-                text: qsTr("Adapter id")
+                text: qsTr("Id адаптера")
             }
 
             StyledText {

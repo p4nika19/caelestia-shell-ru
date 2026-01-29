@@ -58,13 +58,13 @@ StyledFlickable {
 
                         StyledText {
                             Layout.topMargin: Appearance.spacing.large
-                            text: qsTr("Connection status")
+                            text: qsTr("Статус подключения")
                             font.pointSize: Appearance.font.size.larger
                             font.weight: 500
                         }
 
                         StyledText {
-                            text: qsTr("Connection settings for this device")
+                            text: qsTr("Настройки подключения для этого устройства")
                             color: Colours.palette.m3outline
                         }
 
@@ -86,13 +86,13 @@ StyledFlickable {
                                 spacing: Appearance.spacing.larger
 
                                 Toggle {
-                                    label: qsTr("Connected")
+                                    label: qsTr("Подключено")
                                     checked: root.device?.connected ?? false
                                     toggle.onToggled: root.device.connected = checked
                                 }
 
                                 Toggle {
-                                    label: qsTr("Paired")
+                                    label: qsTr("Сопряжено")
                                     checked: root.device?.paired ?? false
                                     toggle.onToggled: {
                                         if (root.device.paired)
@@ -103,7 +103,7 @@ StyledFlickable {
                                 }
 
                                 Toggle {
-                                    label: qsTr("Blocked")
+                                    label: qsTr("Заблокировано")
                                     checked: root.device?.blocked ?? false
                                     toggle.onToggled: root.device.blocked = checked
                                 }
@@ -117,13 +117,13 @@ StyledFlickable {
 
                         StyledText {
                             Layout.topMargin: Appearance.spacing.large
-                            text: qsTr("Device properties")
+                            text: qsTr("Характеристики устройства")
                             font.pointSize: Appearance.font.size.larger
                             font.weight: 500
                         }
 
                         StyledText {
-                            text: qsTr("Additional settings")
+                            text: qsTr("Дополнительные настройки")
                             color: Colours.palette.m3outline
                         }
 
@@ -187,7 +187,7 @@ StyledFlickable {
 
                                             anchors.left: parent.left
 
-                                            text: qsTr("Device name")
+                                            text: qsTr("Имя устройства")
                                             color: Colours.palette.m3outline
                                             font.pointSize: Appearance.font.size.small
                                         }
@@ -306,13 +306,13 @@ StyledFlickable {
                                 }
 
                                 Toggle {
-                                    label: qsTr("Trusted")
+                                    label: qsTr("Доверяется")
                                     checked: root.device?.trusted ?? false
                                     toggle.onToggled: root.device.trusted = checked
                                 }
 
                                 Toggle {
-                                    label: qsTr("Wake allowed")
+                                    label: qsTr("Разрешено пробуждение")
                                     checked: root.device?.wakeAllowed ?? false
                                     toggle.onToggled: root.device.wakeAllowed = checked
                                 }
@@ -326,13 +326,13 @@ StyledFlickable {
 
                         StyledText {
                             Layout.topMargin: Appearance.spacing.large
-                            text: qsTr("Device information")
+                            text: qsTr("Информация об устройстве")
                             font.pointSize: Appearance.font.size.larger
                             font.weight: 500
                         }
 
                         StyledText {
-                            text: qsTr("Information about this device")
+                            text: qsTr("Информация об этом устройстве")
                             color: Colours.palette.m3outline
                         }
 
@@ -354,7 +354,7 @@ StyledFlickable {
                                 spacing: Appearance.spacing.small / 2
 
                                 StyledText {
-                                    text: root.device?.batteryAvailable ? qsTr("Device battery (%1%)").arg(root.device.battery * 100) : qsTr("Battery unavailable")
+                                    text: root.device?.batteryAvailable ? qsTr("Заряд устройства (%1%)").arg(root.device.battery * 100) : qsTr("Батарея недоступна")
                                 }
 
                                 RowLayout {
@@ -391,7 +391,7 @@ StyledFlickable {
 
                                 StyledText {
                                     Layout.topMargin: Appearance.spacing.normal
-                                    text: qsTr("Dbus path")
+                                    text: qsTr("Dbus путь")
                                 }
 
                                 StyledText {
@@ -402,7 +402,7 @@ StyledFlickable {
 
                                 StyledText {
                                     Layout.topMargin: Appearance.spacing.normal
-                                    text: qsTr("MAC address")
+                                    text: qsTr("MAC адрес")
                                 }
 
                                 StyledText {
@@ -413,7 +413,7 @@ StyledFlickable {
 
                                 StyledText {
                                     Layout.topMargin: Appearance.spacing.normal
-                                    text: qsTr("Bonded")
+                                    text: qsTr("Связанно")
                                 }
 
                                 StyledText {
@@ -424,7 +424,7 @@ StyledFlickable {
 
                                 StyledText {
                                     Layout.topMargin: Appearance.spacing.normal
-                                    text: qsTr("System name")
+                                    text: qsTr("Системное имя")
                                 }
 
                                 StyledText {

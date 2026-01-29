@@ -19,18 +19,18 @@ ColumnLayout {
 
     SettingsHeader {
         icon: "cable"
-        title: qsTr("Ethernet settings")
+        title: qsTr("Настройки Ethernet")
     }
 
     StyledText {
         Layout.topMargin: Appearance.spacing.large
-        text: qsTr("Ethernet devices")
+        text: qsTr("Устройства Ethernet")
         font.pointSize: Appearance.font.size.larger
         font.weight: 500
     }
 
     StyledText {
-        text: qsTr("Available ethernet devices")
+        text: qsTr("Доступные Ethernet устройства")
         color: Colours.palette.m3outline
     }
 
@@ -52,7 +52,7 @@ ColumnLayout {
             spacing: Appearance.spacing.small / 2
 
             StyledText {
-                text: qsTr("Total devices")
+                text: qsTr("Все устройства")
             }
 
             StyledText {
@@ -63,7 +63,7 @@ ColumnLayout {
 
             StyledText {
                 Layout.topMargin: Appearance.spacing.normal
-                text: qsTr("Connected devices")
+                text: qsTr("Подключенные устройства")
             }
 
             StyledText {

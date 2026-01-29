@@ -15,8 +15,8 @@ DeviceList {
 
     required property Session session
 
-    title: qsTr("Devices (%1)").arg(Nmcli.ethernetDevices.length)
-    description: qsTr("All available ethernet devices")
+    title: qsTr("Устройства (%1)").arg(Nmcli.ethernetDevices.length)
+    description: qsTr("Все доступные Ethernet устройства")
     activeItem: session.ethernet.active
 
     model: Nmcli.ethernetDevices
@@ -26,7 +26,7 @@ DeviceList {
             spacing: Appearance.spacing.smaller
 
             StyledText {
-                text: qsTr("Settings")
+                text: qsTr("Настройки")
                 font.pointSize: Appearance.font.size.large
                 font.weight: 500
             }
@@ -118,7 +118,7 @@ DeviceList {
 
                     StyledText {
                         Layout.fillWidth: true
-                        text: modelData.interface || qsTr("Unknown")
+                        text: modelData.interface || qsTr("Неизвестно")
                         elide: Text.ElideRight
                     }
 
@@ -128,7 +128,7 @@ DeviceList {
 
                         StyledText {
                             Layout.fillWidth: true
-                            text: modelData.connected ? qsTr("Connected") : qsTr("Disconnected")
+                            text: modelData.connected ? qsTr("Подключено") : qsTr("Отключено")
                             color: modelData.connected ? Colours.palette.m3primary : Colours.palette.m3outline
                             font.pointSize: Appearance.font.size.small
                             font.weight: modelData.connected ? 500 : 400

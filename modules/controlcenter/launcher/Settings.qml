@@ -19,18 +19,18 @@ ColumnLayout {
 
     SettingsHeader {
         icon: "apps"
-        title: qsTr("Launcher Settings")
+        title: qsTr("Настройки лаунчера")
     }
 
     SectionHeader {
         Layout.topMargin: Appearance.spacing.large
-        title: qsTr("General")
-        description: qsTr("General launcher settings")
+        title: qsTr("Основные")
+        description: qsTr("Основные настройки лаунчера")
     }
 
     SectionContainer {
         ToggleRow {
-            label: qsTr("Enabled")
+            label: qsTr("Включен")
             checked: Config.launcher.enabled
             toggle.onToggled: {
                 Config.launcher.enabled = checked;
@@ -39,7 +39,7 @@ ColumnLayout {
         }
 
         ToggleRow {
-            label: qsTr("Show on hover")
+            label: qsTr("Показывать при наведении")
             checked: Config.launcher.showOnHover
             toggle.onToggled: {
                 Config.launcher.showOnHover = checked;
@@ -48,7 +48,7 @@ ColumnLayout {
         }
 
         ToggleRow {
-            label: qsTr("Vim keybinds")
+            label: qsTr("Vim бинды")
             checked: Config.launcher.vimKeybinds
             toggle.onToggled: {
                 Config.launcher.vimKeybinds = checked;
@@ -57,7 +57,7 @@ ColumnLayout {
         }
 
         ToggleRow {
-            label: qsTr("Enable dangerous actions")
+            label: qsTr("Включить опасные действия")
             checked: Config.launcher.enableDangerousActions
             toggle.onToggled: {
                 Config.launcher.enableDangerousActions = checked;
@@ -68,61 +68,61 @@ ColumnLayout {
 
     SectionHeader {
         Layout.topMargin: Appearance.spacing.large
-        title: qsTr("Display")
-        description: qsTr("Display and appearance settings")
+        title: qsTr("Отображение")
+        description: qsTr("Настройки отображения и внешнего вида")
     }
 
     SectionContainer {
         contentSpacing: Appearance.spacing.small / 2
 
         PropertyRow {
-            label: qsTr("Max shown items")
+            label: qsTr("Максимум отображаемых предметов")
             value: qsTr("%1").arg(Config.launcher.maxShown)
         }
 
         PropertyRow {
             showTopMargin: true
-            label: qsTr("Max wallpapers")
+            label: qsTr("Максимум обоев")
             value: qsTr("%1").arg(Config.launcher.maxWallpapers)
         }
 
         PropertyRow {
             showTopMargin: true
-            label: qsTr("Drag threshold")
+            label: qsTr("Порог начала перетаскивания")
             value: qsTr("%1 px").arg(Config.launcher.dragThreshold)
         }
     }
 
     SectionHeader {
         Layout.topMargin: Appearance.spacing.large
-        title: qsTr("Prefixes")
-        description: qsTr("Command prefix settings")
+        title: qsTr("Префиксы")
+        description: qsTr("Настройки команд префиксов")
     }
 
     SectionContainer {
         contentSpacing: Appearance.spacing.small / 2
 
         PropertyRow {
-            label: qsTr("Special prefix")
-            value: Config.launcher.specialPrefix || qsTr("None")
+            label: qsTr("Специальный префикс")
+            value: Config.launcher.specialPrefix || qsTr("Нет")
         }
 
         PropertyRow {
             showTopMargin: true
-            label: qsTr("Action prefix")
-            value: Config.launcher.actionPrefix || qsTr("None")
+            label: qsTr("Действующий префикс")
+            value: Config.launcher.actionPrefix || qsTr("Нет")
         }
     }
 
     SectionHeader {
         Layout.topMargin: Appearance.spacing.large
-        title: qsTr("Fuzzy search")
-        description: qsTr("Fuzzy search settings")
+        title: qsTr("Fuzzy поиск")
+        description: qsTr("Настройки поиска Fuzzy")
     }
 
     SectionContainer {
         ToggleRow {
-            label: qsTr("Apps")
+            label: qsTr("Приложения")
             checked: Config.launcher.useFuzzy.apps
             toggle.onToggled: {
                 Config.launcher.useFuzzy.apps = checked;
@@ -131,7 +131,7 @@ ColumnLayout {
         }
 
         ToggleRow {
-            label: qsTr("Actions")
+            label: qsTr("Действия")
             checked: Config.launcher.useFuzzy.actions
             toggle.onToggled: {
                 Config.launcher.useFuzzy.actions = checked;
@@ -140,7 +140,7 @@ ColumnLayout {
         }
 
         ToggleRow {
-            label: qsTr("Schemes")
+            label: qsTr("Схемы")
             checked: Config.launcher.useFuzzy.schemes
             toggle.onToggled: {
                 Config.launcher.useFuzzy.schemes = checked;
@@ -149,7 +149,7 @@ ColumnLayout {
         }
 
         ToggleRow {
-            label: qsTr("Variants")
+            label: qsTr("Вариации")
             checked: Config.launcher.useFuzzy.variants
             toggle.onToggled: {
                 Config.launcher.useFuzzy.variants = checked;
@@ -158,7 +158,7 @@ ColumnLayout {
         }
 
         ToggleRow {
-            label: qsTr("Wallpapers")
+            label: qsTr("Обои")
             checked: Config.launcher.useFuzzy.wallpapers
             toggle.onToggled: {
                 Config.launcher.useFuzzy.wallpapers = checked;
@@ -169,48 +169,48 @@ ColumnLayout {
 
     SectionHeader {
         Layout.topMargin: Appearance.spacing.large
-        title: qsTr("Sizes")
-        description: qsTr("Size settings for launcher items")
+        title: qsTr("Размеры")
+        description: qsTr("Настройки размеров для предметов лаунчера")
     }
 
     SectionContainer {
         contentSpacing: Appearance.spacing.small / 2
 
         PropertyRow {
-            label: qsTr("Item width")
+            label: qsTr("Ширина предметов")
             value: qsTr("%1 px").arg(Config.launcher.sizes.itemWidth)
         }
 
         PropertyRow {
             showTopMargin: true
-            label: qsTr("Item height")
+            label: qsTr("Высота предметов")
             value: qsTr("%1 px").arg(Config.launcher.sizes.itemHeight)
         }
 
         PropertyRow {
             showTopMargin: true
-            label: qsTr("Wallpaper width")
+            label: qsTr("Ширина обоев")
             value: qsTr("%1 px").arg(Config.launcher.sizes.wallpaperWidth)
         }
 
         PropertyRow {
             showTopMargin: true
-            label: qsTr("Wallpaper height")
+            label: qsTr("Высота обоев")
             value: qsTr("%1 px").arg(Config.launcher.sizes.wallpaperHeight)
         }
     }
 
     SectionHeader {
         Layout.topMargin: Appearance.spacing.large
-        title: qsTr("Hidden apps")
-        description: qsTr("Applications hidden from launcher")
+        title: qsTr("Скрытые приложения")
+        description: qsTr("Приложения скрытые из лаунчера")
     }
 
     SectionContainer {
         contentSpacing: Appearance.spacing.small / 2
 
         PropertyRow {
-            label: qsTr("Total hidden")
+            label: qsTr("Все скрытые")
             value: qsTr("%1").arg(Config.launcher.hiddenApps ? Config.launcher.hiddenApps.length : 0)
         }
     }

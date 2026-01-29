@@ -50,7 +50,7 @@ Item {
                         spacing: Appearance.spacing.smaller
 
                         StyledText {
-                            text: qsTr("Network")
+                            text: qsTr("Сеть")
                             font.pointSize: Appearance.font.size.large
                             font.weight: 500
                         }
@@ -66,7 +66,7 @@ Item {
                             iconSize: Appearance.font.size.normal
                             horizontalPadding: Appearance.padding.normal
                             verticalPadding: Appearance.padding.smaller
-                            tooltip: qsTr("Toggle WiFi")
+                            tooltip: qsTr("Включить WiFi")
 
                             onClicked: {
                                 Nmcli.toggleWifi(null);
@@ -80,7 +80,7 @@ Item {
                             iconSize: Appearance.font.size.normal
                             horizontalPadding: Appearance.padding.normal
                             verticalPadding: Appearance.padding.smaller
-                            tooltip: qsTr("Scan for networks")
+                            tooltip: qsTr("Сканировать сети")
 
                             onClicked: {
                                 Nmcli.rescanWifi();
@@ -94,7 +94,7 @@ Item {
                             iconSize: Appearance.font.size.normal
                             horizontalPadding: Appearance.padding.normal
                             verticalPadding: Appearance.padding.smaller
-                            tooltip: qsTr("Network settings")
+                            tooltip: qsTr("Настройки сети")
 
                             onClicked: {
                                 if (root.session.ethernet.active || root.session.network.active) {
@@ -151,7 +151,7 @@ Item {
                         id: wirelessListSection
 
                         Layout.fillWidth: true
-                        title: qsTr("Wireless")
+                        title: qsTr("Беспроводные подключения")
                         expanded: true
 
                         Loader {

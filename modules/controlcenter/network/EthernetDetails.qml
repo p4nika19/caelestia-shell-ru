@@ -36,7 +36,7 @@ DeviceDetails {
     headerComponent: Component {
         ConnectionHeader {
             icon: "cable"
-            title: root.ethernetDevice?.interface ?? qsTr("Unknown")
+            title: root.ethernetDevice?.interface ?? qsTr("Неизвестно")
         }
     }
 
@@ -46,13 +46,13 @@ DeviceDetails {
                 spacing: Appearance.spacing.normal
 
                 SectionHeader {
-                    title: qsTr("Connection status")
-                    description: qsTr("Connection settings for this device")
+                    title: qsTr("Статус подключения")
+                    description: qsTr("Настройки подключения для этого устройства")
                 }
 
                 SectionContainer {
                     ToggleRow {
-                        label: qsTr("Connected")
+                        label: qsTr("Покдлючено")
                         checked: root.ethernetDevice?.connected ?? false
                         toggle.onToggled: {
                             if (checked) {
@@ -72,28 +72,28 @@ DeviceDetails {
                 spacing: Appearance.spacing.normal
 
                 SectionHeader {
-                    title: qsTr("Device properties")
-                    description: qsTr("Additional information")
+                    title: qsTr("Характеристики устройства")
+                    description: qsTr("Дополнительная информация")
                 }
 
                 SectionContainer {
                     contentSpacing: Appearance.spacing.small / 2
 
                     PropertyRow {
-                        label: qsTr("Interface")
-                        value: root.ethernetDevice?.interface ?? qsTr("Unknown")
+                        label: qsTr("Интерфейс")
+                        value: root.ethernetDevice?.interface ?? qsTr("Неизвестно")
                     }
 
                     PropertyRow {
                         showTopMargin: true
-                        label: qsTr("Connection")
-                        value: root.ethernetDevice?.connection || qsTr("Not connected")
+                        label: qsTr("Подключено")
+                        value: root.ethernetDevice?.connection || qsTr("Не подключено")
                     }
 
                     PropertyRow {
                         showTopMargin: true
-                        label: qsTr("State")
-                        value: root.ethernetDevice?.state ?? qsTr("Unknown")
+                        label: qsTr("Состоние")
+                        value: root.ethernetDevice?.state ?? qsTr("Неизвестно")
                     }
                 }
             }
@@ -103,8 +103,8 @@ DeviceDetails {
                 spacing: Appearance.spacing.normal
 
                 SectionHeader {
-                    title: qsTr("Connection information")
-                    description: qsTr("Network connection details")
+                    title: qsTr("Информация о подключении")
+                    description: qsTr("Детали сетевого подключения")
                 }
 
                 SectionContainer {

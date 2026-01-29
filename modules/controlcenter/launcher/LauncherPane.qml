@@ -156,7 +156,7 @@ Item {
                     spacing: Appearance.spacing.smaller
 
                     StyledText {
-                        text: qsTr("Launcher")
+                        text: qsTr("Лаунчер")
                         font.pointSize: Appearance.font.size.large
                         font.weight: 500
                     }
@@ -172,7 +172,7 @@ Item {
                         iconSize: Appearance.font.size.normal
                         horizontalPadding: Appearance.padding.normal
                         verticalPadding: Appearance.padding.smaller
-                        tooltip: qsTr("Launcher settings")
+                        tooltip: qsTr("Настройки лаунчера")
 
                         onClicked: {
                             if (root.session.launcher.active) {
@@ -188,13 +188,13 @@ Item {
 
                 StyledText {
                     Layout.topMargin: Appearance.spacing.large
-                    text: qsTr("Applications (%1)").arg(root.searchText ? root.filteredApps.length : allAppsDb.apps.length)
+                    text: qsTr("Приложения (%1)").arg(root.searchText ? root.filteredApps.length : allAppsDb.apps.length)
                     font.pointSize: Appearance.font.size.normal
                     font.weight: 500
                 }
 
                 StyledText {
-                    text: qsTr("All applications available in the launcher")
+                    text: qsTr("Все приложения доступные в лаунчере")
                     color: Colours.palette.m3outline
                 }
 
@@ -230,7 +230,7 @@ Item {
                         topPadding: Appearance.padding.normal
                         bottomPadding: Appearance.padding.normal
 
-                        placeholderText: qsTr("Search applications...")
+                        placeholderText: qsTr("Искать приложения...")
 
                         onTextChanged: {
                             root.searchText = text;
@@ -350,7 +350,7 @@ Item {
 
                                 StyledText {
                                     Layout.fillWidth: true
-                                    text: modelData.name || modelData.entry?.name || qsTr("Unknown")
+                                    text: modelData.name || modelData.entry?.name || qsTr("Неизвестно")
                                     font.pointSize: Appearance.font.size.normal
                                 }
                             }
@@ -493,7 +493,7 @@ Item {
                 Layout.topMargin: Appearance.padding.large * 2
                 visible: displayedApp === null
                 icon: "apps"
-                title: qsTr("Launcher Applications")
+                title: qsTr("Приложения лаунчера")
             }
 
             Item {
@@ -528,7 +528,7 @@ Item {
                     StyledText {
                         id: appTitleText
                         Layout.alignment: Qt.AlignHCenter
-                        text: displayedApp ? (displayedApp.name || displayedApp.entry?.name || qsTr("Application Details")) : ""
+                        text: displayedApp ? (displayedApp.name || displayedApp.entry?.name || qsTr("Сведения о программе")) : ""
                         font.pointSize: Appearance.font.size.large
                         font.bold: true
                     }
@@ -562,7 +562,7 @@ Item {
                         SwitchRow {
                             Layout.topMargin: Appearance.spacing.normal
                             visible: appDetailsLayout.displayedApp !== null
-                            label: qsTr("Hide from launcher")
+                            label: qsTr("Скрыть из лаунчера")
                             checked: root.hideFromLauncherChecked
                             enabled: appDetailsLayout.displayedApp !== null
                             onToggled: checked => {
